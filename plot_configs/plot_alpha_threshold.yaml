@@ -1,0 +1,32 @@
+props:
+  content:
+    cum_regret: False
+    timed: False
+  subplot:
+    nrows: 1
+    ncols: 1
+    sharex: True
+    sharey: True
+    figsize: !!python/tuple [8, 6]
+  plt:
+    "$l_\\alpha=0$ (Offline DKL)":  {color: green, linestyle: '-'}
+    "$l_\\alpha=0.01$":             {color: red, linestyle: '-'}
+    "$l_\\alpha=0.05$":             {color: blue, linestyle: '-'}
+    "$l_\\alpha=0.1$":              {color: purple, linestyle: '-'}
+    "$l_\\alpha=0.2$":              {color: black, linestyle: '-'}
+    "$l_\\alpha$=inf (GP-UCB)":     {color: brown, linestyle: '-'}
+  legend:
+    loc: upper right
+    prop: {'size': 15}
+  index_max: 101
+content:
+  - #itle: Effect of $l_\alpha$
+    lower_bound: 0
+    lines:
+      "$l_\\alpha=0$ (Offline DKL)":  runs_paper2/ablation_lf/1D_binary/double_gp_TwoStage_d8_1D_abl_binary_lf0
+      "$l_\\alpha=0.01$":             runs_paper2/ablation_lf/1D_binary/double_gp_TwoStage_d8_1D_abl_binary_lf0p01
+      "$l_\\alpha=0.05$":             runs_paper2/ablation_lf/1D_binary/double_gp_TwoStage_d8_1D_abl_binary_lf0p05
+      "$l_\\alpha=0.1$":              runs_paper2/ablation_lf/1D_binary/double_gp_TwoStage_d8_1D_abl_binary_lf0p1
+      "$l_\\alpha=0.2$":              runs_paper2/ablation_lf/1D_binary/double_gp_TwoStage_d8_1D_abl_binary_lf0p2
+      "$l_\\alpha$=inf (GP-UCB)":     runs_paper2/ablation_lf/1D_binary/double_gp_TwoStage_d8_1D_abl_binary_lfinf
+

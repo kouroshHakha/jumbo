@@ -1,0 +1,26 @@
+activation: tanh
+bnorm: false
+drop_out: 0.0
+input_dim: 12
+input_transform_fn: null
+nh_layer: 3
+nhidden: 32
+nz_dim: 4
+optimize_out: false
+out_dim: 1
+output_act: tanh
+skip_conn: false
+use_huber: false
+use_resnet: false
+xstat: null
+ystat:
+- - !!python/object/apply:numpy.core.multiarray.scalar
+    - &id001 !!python/object/apply:numpy.dtype
+      args: [f4, 0, 1]
+      state: !!python/tuple [3, <, null, null, null, -1, -1, 0]
+    - !!binary |
+      tdgCPw==
+- - !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      rf03Pg==

@@ -1,0 +1,19 @@
+props:
+  content:
+    cum_regret: False
+    timed: False
+  subplot:
+    nrows: 1
+    ncols: 1
+    figsize: !!python/tuple [8, 6]
+  plt:
+    JUMBO (ours): {color: blue, linestyle: '-'}
+  legend:
+    loc: lower left
+    prop: {'size': 15}
+  index_max: 101
+content:
+  - # title: 8D-Circuit Sizing
+    lower_bound: 0
+    lines:
+      JUMBO (ours):   <path_to_saved_directory>

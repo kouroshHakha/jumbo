@@ -1,0 +1,16 @@
+botorch==0.2.2
+cma==2.7.0
+ConfigSpace==0.4.15
+dataclasses-json==0.5.2
+gpytorch==1.0.1
+-e git+https://github.com/automl/nas_benchmarks.git@1b09906ba3f522f15766b75643423acccd9db3a5#egg=nas_benchmarks
+-e git+https://github.com/automl/pybnn.git@6bd277421b83f882fa43d8dad2b7851b9682aa4b#egg=pybnn
+ruamel-yaml==0.15.46
+torch==1.4.0
+torch-cluster==1.5.4
+torch-geometric==1.6.1
+torch-scatter==2.0.4
+torch-sparse==0.6.1
+torch-spline-conv==1.2.0
+tqdm==4.31.1
+wandb==0.9.7

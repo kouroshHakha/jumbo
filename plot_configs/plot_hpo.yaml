@@ -1,0 +1,79 @@
+exclude_list: ['trivial', 'bohb']
+props:
+  content:
+    cum_regret: False
+    timed: True
+  subplot:
+    nrows: 2
+    ncols: 2
+#    sharex: True
+#    sharey: True
+    figsize: !!python/tuple [16, 12]
+  plt:
+    JUMBO (ours): {color: blue, linestyle: '-'}
+    GP-UCB: {color: brown, linestyle: '-'}
+    MT-BOHAMIANN: {color: purple, linestyle: '-'}
+    MT-ABLR: {color: orange, linestyle: '-'}
+    Offline DKL: {color: green, linestyle: '-'}
+    BOHB: {color: red, linestyle: '-'}
+  legend:
+    ax_id: 1
+    loc: lower left
+    prop: {'size': 14}
+#    bbox_to_anchor: !!python/tuple [1.05, 1]
+#    borderaxespad: 0.
+  yrange: !!python/tuple [-6, 0]
+  fontsize:
+    labels: 18
+    ticks: 15
+content:
+  - title: Naval to Parkinson (DT)
+    lower_bound: 0.007629349
+    lines:
+      JUMBO (ours): runs_nas/naval_parkinson/COMBO_lf0p1
+      GP-UCB: runs_nas/naval_parkinson/gp_ucb
+      MT-BOHAMIANN: runs_nas/naval_parkinson/mt_bohamiann
+      MT-ABLR: runs_nas/naval_parkinson/mt_ablr
+      trivial: runs_nas/naval_parkinson/trivial
+      Offline DKL: runs_nas/naval_parkinson/warmstart
+  - title: Protein (TT)
+    lower_bound: 0.22137885
+    lines:
+      JUMBO (ours):    runs_nas/protein_structure/COMBO_lf0p1
+      GP-UCB:         runs_nas/protein_structure/gp_ucb
+      MT-BOHAMIANN:   runs_nas/protein_structure/mt_bohamiann
+      MT-ABLR:        runs_nas/protein_structure/mt_ablr
+      trivial:        runs_nas/protein_structure/trivial
+      Offline DKL:   runs_nas/protein_structure/warmstart
+      BOHB:           runs_nas/protein_structure/bohb
+  - title: Parkinsons (TT)
+    lower_bound: 0.007629349
+    lines:
+      JUMBO (ours):    runs_nas/parkinsons_telemonitoring/COMBO_lf0p1
+      GP-UCB:         runs_nas/parkinsons_telemonitoring/gp_ucb
+      MT-BOHAMIANN:   runs_nas/parkinsons_telemonitoring/mt_bohamiann
+      Offline DKL:   runs_nas/parkinsons_telemonitoring/warmstart
+      MT-ABLR:        runs_nas/parkinsons_telemonitoring/mt_ablr
+      trivial:        runs_nas/parkinsons_telemonitoring/trivial
+      BOHB:           runs_nas/parkinsons_telemonitoring/bohb
+  - title: Naval (TT)
+    lower_bound: 3.1911346e-05
+    lines:
+      JUMBO (ours):    runs_nas/naval_propulsion/COMBO_lf0p1
+      GP-UCB:         runs_nas/naval_propulsion/gp_ucb
+      MT-BOHAMIANN:   runs_nas/naval_propulsion/mt_bohamiann
+      MT-ABLR:        runs_nas/naval_propulsion/mt_ablr
+      trivial:        runs_nas/naval_propulsion/trivial
+      Offline DKL:   runs_nas/naval_propulsion/warmstart
+      BOHB:           runs_nas/naval_propulsion/bohb
+#  - title: Slice Localization
+#    lower_bound: 0.00020406871
+#    lines:
+##      binary-COMBO: runs_nas/double_gp_slice_localization_d9_binary-COMBO
+#      BOHB:           runs_nas/slice_localization/bohb
+#      COMBO[ours]:    runs_nas/slice_localization/double_gp
+#      GP-UCB:         runs_nas/slice_localization/gp_ucb
+#      MT-BOHAMIANN:   runs_nas/slice_localization/mt_bohamiann
+#      MT-ABLR:        runs_nas/slice_localization/mt_ablr
+#      trivial:        runs_nas/slice_localization/trivial
+#      warm-GP-only:            runs_nas/slice_localization/warmstart
