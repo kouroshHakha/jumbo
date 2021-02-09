@@ -76,3 +76,37 @@ python scripts/plot_regret.py plot_configs/plot_hpo.yaml
 ```
 
 # Folder Structure
+```
+├── README.md
+├── circuits
+│   ├── functions.py
+│   └── utils.py
+├── data
+├── hpo
+│   ├── functions.py
+│   └── transform.py
+├── jumbo
+│   ├── acq
+│   │   ├── acq.py
+│   │   └── acq_optimize.py
+│   ├── bo
+│   │   ├── loop.py
+│   │   └── transform.py
+│   ├── data.py
+│   ├── function_interface.py
+│   ├── gp
+│   │   ├── model.py
+│   │   └── train.py
+│   ├── nn
+│   │   ├── basics.py
+│   │   └── models.py
+│   ├── optimize.py
+│   └── util.py
+├── plot_configs
+├── saved_models
+└── scripts
+    ├── plot_regret.py
+    ├── pretrain_ckt.py
+    ├── run_jumbo_ckt.py
+    └── run_jumbo_hpo.py
+```
