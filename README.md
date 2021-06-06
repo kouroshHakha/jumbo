@@ -110,3 +110,9 @@ python scripts/plot_regret.py plot_configs/plot_hpo.yaml
     ├── run_jumbo_ckt.py
     └── run_jumbo_hpo.py
 ```
+
+# Citing Jumbo
+If you fine Jumbo useful, please cite the following paper: https://arxiv.org/abs/2106.00942
+
+# License
+Jumbo is licensed under BSD-3 [license](https://github.com/kouroshHakha/jumbo/blob/master/LICENSE) file. 
