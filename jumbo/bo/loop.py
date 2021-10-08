@@ -12,7 +12,7 @@ from jumbo.nn.models import Model
 from jumbo.acq.acq import (
     UpperConfidenceBoundWithAuxModel, MFAcquisition, UpperConfidenceBound
 )
-from jumbo.acq.acq_optimize import cma_minimize
+from jumbo.acq.acq_optimize import cma_minimize, random_minimize
 from jumbo.bo.transform import (
     Transform, convert_to_xgrid_torch, tensor_x_to_tensor_grid
 )
@@ -260,8 +260,11 @@ class Jumbo:
         cnt, cnt_max = 0, 10
         new_optim_val, best_x, best_temp_acq = float('inf'), None, float('inf')
         while optim_acq_val < new_optim_val and cnt < cnt_max:
-            x, new_optim_val = cma_minimize(acqf, bounds=np.stack([self.lower, self.upper]),
-                                            maxiter=100, sigma0=0.5)
+            if len(self.lower) == 1:
+                x, new_optim_val = random_minimize(acqf, np.stack([self.lower, self.upper]))
+            else:
+                x, new_optim_val = cma_minimize(acqf, bounds=np.stack([self.lower, self.upper]),
+                                                maxiter=100, sigma0=0.5)
             if optim_acq_val < new_optim_val:
                 print(f'[Warning] Acquisition function is not improved compared to '
                       f'acq_f = {optim_acq_val}, trying again ...')
